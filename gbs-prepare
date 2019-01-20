@@ -1,0 +1,13 @@
+#!/bin/sh
+#############################################################################################################
+#
+# ABSTRACT
+#
+# wrapper script for GBS system backup client, to provide security for admin/bkpusr login
+# this script will be executed from the bkpusr account, so that it can be put in the authorized_keys.
+# authorized keys setup for the bkpusr will be limited to execute this script only.
+# in authorized_keys:  command = "/usr/sbin/gbs-prepare" ssh-rsa AAAAkwe1k.......
+# so this  Script to check for GBS backup errors in the backup of last night.
+# Requirement: add an entry "backup-server" to the /etc/hosts file, so that the backup server IP is defined.
+############################################################################################################
+sudo /usr/sbin/gbs-client --yes -e sdb -e sdb1 -e sdc -e sdd -e sde -e sdf -e sdg -e sdh -e sdi -e sdj -e sdk -e sdl -e sdm -e sdn -e sdo -e sdp -e sdq -e sdr -e sds -e sdt -e sdu -e sdv -e sdw -e sdx -e sdy -e sdz --server backup-server
